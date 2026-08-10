@@ -25,71 +25,52 @@ export default function BrandCard({ brand, gclid, rank }: BrandCardProps) {
     window.open(finalUrl, '_blank', 'noopener,noreferrer');
   };
 
-  const getRankBadge = (rank: number) => {
-    switch (rank) {
-      case 1: return <div className="absolute -top-3 -left-3 bg-accent text-background font-black px-4 py-1.5 rounded-lg shadow-2xl z-20 text-[10px] uppercase tracking-[0.2em] border border-white/20">ELITE #1</div>;
-      case 2: return <div className="absolute -top-3 -left-3 bg-slate-200 text-background font-black px-4 py-1.5 rounded-lg shadow-2xl z-20 text-[10px] uppercase tracking-[0.2em] border border-white/20">PREMIUM #2</div>;
-      case 3: return <div className="absolute -top-3 -left-3 bg-teal-600 text-white font-black px-4 py-1.5 rounded-lg shadow-2xl z-20 text-[10px] uppercase tracking-[0.2em] border border-white/20">CHOIX #3</div>;
-      default: return null;
-    }
-  };
-
   return (
     <div 
       onClick={handleCardClick}
-      className="relative navigator-card-bg rounded-3xl p-8 flex flex-col gap-8 cursor-pointer hover:border-accent/40 transition-all duration-500 group navigator-glow overflow-hidden"
+      className={`relative card-choix rounded-xl overflow-hidden cursor-pointer flex flex-col md:flex-row items-center gap-6 p-6 md:p-8 transition-all group ${rank === 1 ? 'border-white/30 bg-white/5' : ''}`}
     >
-      {rank && getRankBadge(rank)}
-      
-      {/* Decorative Compass Corner */}
-      <div className="absolute -bottom-8 -right-8 w-32 h-32 opacity-5 pointer-events-none group-hover:opacity-10 transition-opacity">
-        <svg viewBox="0 0 100 100" className="w-full h-full fill-white">
-          <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" strokeWidth="1" />
-          <path d="M50 5 L55 45 L95 50 L55 55 L50 95 L45 55 L5 50 L45 45 Z" />
-        </svg>
-      </div>
+      {/* Rank Label */}
+      {rank && (
+        <div className="absolute top-2 left-2 px-2 py-0.5 bg-black/50 border border-white/20 rounded text-[9px] font-bold text-white uppercase tracking-tighter">
+          N° {rank}
+        </div>
+      )}
 
-      <div className="flex items-center justify-between gap-6">
-        <div className="relative w-28 h-28 bg-white/5 rounded-2xl p-3 flex items-center justify-center border border-white/5 group-hover:scale-105 transition-transform duration-500 shadow-inner">
+      {/* Logo Container */}
+      <div className="w-full md:w-[180px] h-[100px] bg-black/40 rounded-lg flex items-center justify-center p-4 border border-white/5">
+        <div className="relative w-full h-full">
           <Image 
             src={brand.logo} 
             alt={brand.name} 
-            width={90} 
-            height={90} 
+            fill
             className="object-contain brightness-110"
           />
         </div>
-        <div className="flex flex-col items-end">
-          <div className="text-4xl font-black text-white group-hover:text-accent transition-colors tracking-tighter">{brand.rating.toFixed(1)}</div>
-          <div className="flex gap-1 mt-2">
-            {[...Array(5)].map((_, i) => (
-              <svg key={i} className={`w-3.5 h-3.5 ${i < Math.floor(brand.rating / 2) ? 'text-accent fill-accent' : 'text-white/10 fill-white/10'}`} viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-            ))}
-          </div>
-          <div className="text-[10px] text-white/30 mt-2 uppercase tracking-widest font-bold">{brand.votes} votes certifiés</div>
+      </div>
+
+      {/* Rating */}
+      <div className="flex flex-col items-center md:items-start min-w-[100px]">
+        <div className="text-4xl md:text-5xl font-black text-white/90 tracking-tighter">
+          {brand.rating.toFixed(1)}<span className="text-xl md:text-2xl text-white/40">/10</span>
         </div>
       </div>
 
-      <div className="flex flex-col gap-4">
-        <div>
-          <h3 className="text-2xl font-black text-white mb-2 tracking-tight">{brand.name}</h3>
-          <div className="inline-block px-3 py-1 bg-primary/20 rounded-md border border-primary/30">
-            <p className="text-accent-secondary font-black text-sm uppercase tracking-tight">
-              {brand.bonus}
-            </p>
-          </div>
+      {/* Description */}
+      <div className="flex-grow text-center md:text-left">
+        <p className="text-sm md:text-base text-white/60 font-medium leading-relaxed max-w-xl">
+          {brand.bonus} - Plateforme reconnue pour sa fiabilité et ses options de paiement rapides en France.
+        </p>
+        <div className="mt-4 text-[10px] text-white/20 uppercase tracking-widest font-bold">
+          Conditions applicables. 18+
         </div>
-        
-        <div className="mt-4 flex flex-col gap-4">
-          <button className="gold-shimmer w-full py-4 bg-primary hover:bg-teal-700 text-white font-black uppercase tracking-widest rounded-xl shadow-lg transition-all group-hover:scale-[1.02]">
-            Visiter Maintenant
-          </button>
-          <div className="text-[9px] text-white/20 uppercase tracking-tighter text-center font-bold">
-            Publicité • Conditions s&apos;appliquent • 18+
-          </div>
-        </div>
+      </div>
+
+      {/* CTA Button */}
+      <div className="w-full md:w-auto">
+        <button className="btn-red w-full md:w-[220px] py-4 rounded-lg text-white font-black text-xs uppercase tracking-[0.15em] transition-all">
+          PROFITEZ DE L&apos;OFFRE
+        </button>
       </div>
     </div>
   );
