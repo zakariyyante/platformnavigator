@@ -9,34 +9,40 @@ export default function Header() {
 
   return (
     <>
-      {/* Top Gold Disclaimer Bar */}
-      <div className="top-disclaimer w-full py-1.5 px-4 flex items-center justify-center gap-2 z-[60] relative">
-        <div className="w-5 h-5 rounded-full border border-background flex items-center justify-center text-[8px] font-black">18+</div>
-        <span className="tracking-tight">Contenu réservé aux personnes majeures. Jouez avec responsabilité et gardez le contrôle.</span>
+      {/* Top Small Disclaimer Line */}
+      <div className="w-full py-2 px-4 flex items-center justify-center gap-2 bg-black/40 border-b border-white/5 relative z-[60]">
+        <svg className="w-3 h-3 text-white/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <span className="text-[9px] font-bold text-white/30 uppercase tracking-[0.2em]">Information Commerciale : Guide Gratuit Soutenu Par Des Partenariats Affiliés</span>
       </div>
 
-      <header className="sticky top-0 z-50 w-full bg-nav-dark/95 backdrop-blur-md border-b border-accent/10">
+      <header className="sticky top-0 z-50 w-full bg-nav-dark border-b border-white/5">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-4 group">
-            <div className="relative w-[220px] h-[45px]">
-                <Image 
-                  src="/logo.png" 
-                  alt="Platform Navigator" 
-                  fill 
-                  className="object-contain group-hover:brightness-110 transition-all" 
-                  priority
-                />
+            <div className="relative w-[180px] h-[40px]">
+              <Image 
+                src="/logo.png" 
+                alt="Platform Navigator" 
+                fill 
+                className="object-contain brightness-0 invert" 
+                priority
+              />
             </div>
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-6">
-            <Link href="/" className="px-5 py-1.5 bg-accent/10 rounded-md text-xs font-bold text-accent uppercase tracking-wider border border-accent/20 hover:bg-accent/20 transition-all">ACCUEIL</Link>
-            <Link href="/guide" className="text-xs font-bold text-white/70 hover:text-accent transition-colors tracking-widest uppercase">SAVOIR-FAIRE</Link>
-            <Link href="/responsible-gambling" className="text-xs font-bold text-white/70 hover:text-accent transition-colors tracking-widest uppercase">SERVICE ET ASSISTANCE</Link>
+          <nav className="hidden lg:flex items-center gap-8">
+            <Link href="/" className="text-[10px] font-black text-white hover:text-accent transition-colors tracking-widest uppercase">ACCUEIL</Link>
+            <Link href="/brands" className="text-[10px] font-black text-white hover:text-accent transition-colors tracking-widest uppercase">CLASSEMENT</Link>
+            <Link href="/guide" className="text-[10px] font-black text-white hover:text-accent transition-colors tracking-widest uppercase">CRITÈRES</Link>
+            <Link href="/about" className="text-[10px] font-black text-white hover:text-accent transition-colors tracking-widest uppercase">ÉDITION</Link>
           </nav>
 
-          {/* Mobile Hamburger */}
+          {/* CTA - Small 18+ circle for nav */}
+          <div className="hidden lg:block">
+            <div className="w-8 h-8 rounded-full bg-red-600 flex items-center justify-center text-[8px] font-black text-white border border-white/20">18+</div>
+          </div>
           <button 
             className="lg:hidden p-2 text-white/70 hover:text-accent"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
