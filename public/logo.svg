@@ -1,0 +1,17 @@
+<svg width="640" height="160" viewBox="0 0 640 160" xmlns="http://www.w3.org/2000/svg">
+  <!-- Shield Icon -->
+  <path d="M40 20 L80 20 L80 60 C80 85 60 100 60 100 C60 100 40 85 40 60 Z" fill="#ff8c00" />
+  <path d="M55 40 L65 40 L50 65 L60 65 L45 85 L50 85" stroke="#ffffff" stroke-width="3" fill="none" />
+  
+  <!-- Wordmark -->
+  <text x="100" y="70" font-family="Arial, sans-serif" font-weight="bold" font-size="48">
+    <tspan fill="#ffd700">NAVIGATOR</tspan>
+    <tspan fill="#00e5ff">FR</tspan>
+    <tspan fill="#ffffff">Reviews</tspan>
+  </text>
+  
+  <!-- Sub-line -->
+  <text x="105" y="105" font-family="Arial, sans-serif" font-size="14" fill="#ffffff" letter-spacing="4" style="text-transform: uppercase;">
+    platformnavigator.com
+  </text>
+</svg>
