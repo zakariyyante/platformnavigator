@@ -22,7 +22,6 @@ export default function MobileModal({ brands }: MobileModalProps) {
     
     if (gclid && isMobileDevice) {
       setIsOpen(true);
-      // Prevent scrolling when modal is open
       document.body.style.overflow = 'hidden';
     }
 
@@ -36,39 +35,42 @@ export default function MobileModal({ brands }: MobileModalProps) {
   const mobileBrands = brands.filter(b => b.isMobile);
 
   return (
-    <div className="fixed inset-0 z-[100] bg-background flex flex-col overflow-y-auto animate-in fade-in slide-in-from-bottom-4 duration-500">
+    <div className="fixed inset-0 z-[100] bg-background flex flex-col overflow-y-auto animate-in fade-in slide-in-from-bottom-8 duration-500">
       {/* Modal Header */}
-      <div className="sticky top-0 z-[110] w-full bg-background border-b border-white/10 px-4 py-4 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <Image src="/favicon.svg" alt="Logo" width={32} height={32} />
-          <span className="font-bold text-accent tracking-tighter">NAVIGATOR FR</span>
+      <div className="sticky top-0 z-[110] w-full bg-nav-dark border-b border-white/5 px-6 py-6 flex items-center justify-between backdrop-blur-xl">
+        <div className="relative w-[180px] h-[40px]">
+          <Image src="/logo.png" alt="Logo" fill className="object-contain" />
         </div>
         <button 
           onClick={() => setIsOpen(false)}
-          className="p-2 text-white/50 hover:text-white"
+          className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/50 hover:text-white transition-colors"
         >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
       </div>
 
       <div className="flex-grow flex flex-col">
         {/* Modal Hero */}
-        <div className="px-4 py-8 text-center felt-texture">
-          <div className="inline-block px-3 py-1 rounded-full bg-primary/20 border border-primary/30 text-[10px] font-bold text-primary uppercase tracking-widest mb-4">
-            Offres Spéciales Mobiles
+        <div className="px-6 py-12 text-center navigator-texture relative overflow-hidden">
+          <div className="absolute inset-0 bg-primary/5 blur-3xl" />
+          <div className="relative z-10">
+            <div className="inline-block px-4 py-1.5 rounded-full bg-accent/20 border border-accent/30 text-[10px] font-black text-accent uppercase tracking-[0.3em] mb-6">
+              Navigation Mobile Certifiée
+            </div>
+            <h2 className="text-4xl font-black text-white mb-4 leading-none tracking-tight">
+              Les Meilleures <br />
+              <span className="gold-text">Destinations</span>
+            </h2>
+            <p className="text-white/40 text-sm font-medium leading-relaxed max-w-[280px] mx-auto">
+              Accès instantané aux plateformes optimisées pour votre smartphone.
+            </p>
           </div>
-          <h2 className="text-3xl font-black text-white mb-2 leading-tight">
-            Les Meilleurs Bonus sur <span className="gold-text">Mobile</span>
-          </h2>
-          <p className="text-white/60 text-sm">
-            Accès instantané aux meilleures plateformes optimisées pour votre smartphone.
-          </p>
         </div>
 
         {/* Modal Brand Grid */}
-        <div className="px-4 py-8 space-y-4">
+        <div className="px-6 py-12 space-y-8 bg-background relative z-10">
           {mobileBrands.map((brand, index) => (
             <BrandCard 
               key={brand.id} 
@@ -79,20 +81,20 @@ export default function MobileModal({ brands }: MobileModalProps) {
           ))}
         </div>
 
-        {/* Modal Disclaimer */}
-        <div className="px-4 py-6 bg-card-bg/50 border-t border-white/5 text-center">
-          <div className="flex flex-col items-center gap-2 mb-4">
-            <div className="w-8 h-8 rounded-full bg-red-600 flex items-center justify-center text-xs font-black text-white">18+</div>
-            <p className="text-[10px] text-white/60 leading-relaxed italic">
-              Le jeu comporte des risques : endettement, isolement, dépendance. Appelez le 09 74 75 13 13.
+        {/* Modal Compliance */}
+        <div className="px-6 py-10 bg-nav-dark/50 border-t border-white/5">
+          <div className="flex flex-col items-center text-center gap-6">
+            <div className="w-12 h-12 rounded-2xl bg-red-600 flex items-center justify-center text-sm font-black text-white shadow-xl">18+</div>
+            <p className="text-[11px] text-white/40 leading-relaxed font-bold uppercase tracking-tight italic">
+              Le jeu comporte des risques : endettement, isolement, dépendance. Pour être aidé, appelez le 09 74 75 13 13.
             </p>
           </div>
         </div>
       </div>
 
       {/* Modal Footer */}
-      <div className="mt-auto py-6 px-4 text-center border-t border-white/5 bg-card-bg">
-        <p className="text-[10px] text-white/30 uppercase tracking-[0.2em]">
+      <div className="mt-auto py-8 px-6 text-center border-t border-white/5 bg-nav-dark">
+        <p className="text-[10px] text-white/20 font-black uppercase tracking-[0.4em]">
           &copy; {new Date().getFullYear()} platformnavigator.com
         </p>
       </div>

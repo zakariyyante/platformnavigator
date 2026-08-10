@@ -8,36 +8,42 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-md border-b border-white/10">
+    <header className="sticky top-0 z-50 w-full bg-nav-dark/90 backdrop-blur-lg border-b border-white/5">
       <div className="container mx-auto px-4 h-20 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-3">
-          <div className="relative w-10 h-10">
-            <Image src="/favicon.svg" alt="Logo" fill className="object-contain" />
-          </div>
-          <div className="flex flex-col">
-            <div className="flex items-baseline font-bold leading-none text-xl tracking-tight">
-              <span className="text-accent">NAVIGATOR</span>
-              <span className="text-accent-secondary ml-1 text-base">FR</span>
-              <span className="text-white ml-1 text-base">Reviews</span>
-            </div>
-            <span className="text-[10px] text-white/50 tracking-[0.2em] font-medium uppercase mt-1">
-              platformnavigator.com
-            </span>
+        <Link href="/" className="flex items-center gap-4 group">
+          <div className="relative w-[240px] h-[50px]">
+            <Image 
+              src="/logo.png" 
+              alt="Platform Navigator" 
+              fill 
+              className="object-contain group-hover:brightness-110 transition-all" 
+              priority
+            />
           </div>
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
-          <Link href="/" className="text-sm font-semibold hover:text-primary transition-colors">Home</Link>
-          <Link href="/brands" className="text-sm font-semibold hover:text-primary transition-colors">Brands</Link>
-          <Link href="/guide" className="text-sm font-semibold hover:text-primary transition-colors">Guide</Link>
-          <Link href="/about" className="text-sm font-semibold hover:text-primary transition-colors">About Us</Link>
-          <Link href="/contact" className="text-sm font-semibold hover:text-primary transition-colors">Contact Us</Link>
+        <nav className="hidden lg:flex items-center gap-10">
+          <Link href="/" className="text-sm font-bold text-white/70 hover:text-accent transition-colors tracking-wide uppercase">Accueil</Link>
+          <Link href="/brands" className="text-sm font-bold text-white/70 hover:text-accent transition-colors tracking-wide uppercase">Marques</Link>
+          <Link href="/guide" className="text-sm font-bold text-white/70 hover:text-accent transition-colors tracking-wide uppercase">Guide</Link>
+          <Link href="/about" className="text-sm font-bold text-white/70 hover:text-accent transition-colors tracking-wide uppercase">À Propos</Link>
+          <Link href="/contact" className="text-sm font-bold text-white/70 hover:text-accent transition-colors tracking-wide uppercase">Contact</Link>
         </nav>
+
+        {/* CTA in Header */}
+        <div className="hidden lg:block">
+          <Link 
+            href="/brands" 
+            className="px-6 py-2.5 bg-primary hover:bg-teal-700 text-white text-xs font-black uppercase tracking-widest rounded-full transition-all border border-white/10"
+          >
+            Meilleurs Bonus
+          </Link>
+        </div>
 
         {/* Mobile Hamburger */}
         <button 
-          className="md:hidden p-2 text-white"
+          className="lg:hidden p-2 text-white/70 hover:text-white"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -48,12 +54,19 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-background border-b border-white/10 py-4 px-4 flex flex-col gap-4">
-          <Link href="/" className="text-lg font-semibold" onClick={() => setIsMenuOpen(false)}>Home</Link>
-          <Link href="/brands" className="text-lg font-semibold" onClick={() => setIsMenuOpen(false)}>Brands</Link>
-          <Link href="/guide" className="text-lg font-semibold" onClick={() => setIsMenuOpen(false)}>Guide</Link>
-          <Link href="/about" className="text-lg font-semibold" onClick={() => setIsMenuOpen(false)}>About Us</Link>
-          <Link href="/contact" className="text-lg font-semibold" onClick={() => setIsMenuOpen(false)}>Contact Us</Link>
+        <div className="lg:hidden bg-nav-dark border-b border-white/5 py-8 px-6 flex flex-col gap-6 animate-in slide-in-from-top duration-300">
+          <Link href="/" className="text-xl font-black text-white" onClick={() => setIsMenuOpen(false)}>ACCUEIL</Link>
+          <Link href="/brands" className="text-xl font-black text-white" onClick={() => setIsMenuOpen(false)}>MARQUES</Link>
+          <Link href="/guide" className="text-xl font-black text-white" onClick={() => setIsMenuOpen(false)}>GUIDE</Link>
+          <Link href="/about" className="text-xl font-black text-white" onClick={() => setIsMenuOpen(false)}>À PROPOS</Link>
+          <Link href="/contact" className="text-xl font-black text-white" onClick={() => setIsMenuOpen(false)}>CONTACT</Link>
+          <Link 
+            href="/brands" 
+            className="w-full py-4 bg-primary text-center text-white text-sm font-black uppercase tracking-widest rounded-xl mt-4"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            MEILLEURS BONUS
+          </Link>
         </div>
       )}
     </header>
