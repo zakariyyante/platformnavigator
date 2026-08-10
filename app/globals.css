@@ -7,7 +7,7 @@
   --primary: #0d9488; /* Teal-600 */
   --accent: #d4af37; /* Metallic Gold */
   --accent-secondary: #2dd4bf; /* Teal-400 */
-  --nav-dark: #0a0a0c;
+  --nav-dark: #000d0d;
 }
 
 @theme inline {
@@ -28,25 +28,27 @@ body {
 }
 
 .choix-gradient-bg {
-  background: #0a0a0c;
+  background: radial-gradient(circle at 10% 20%, rgba(13, 148, 136, 0.1) 0%, transparent 40%),
+              radial-gradient(circle at 90% 80%, rgba(212, 175, 55, 0.05) 0%, transparent 40%),
+              #001212;
 }
 
 .card-choix {
-  background: #121216;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(0, 31, 31, 0.8);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  backdrop-blur: sm;
   transition: all 0.3s ease;
 }
 
 .card-choix:hover {
-  border-color: rgba(255, 255, 255, 0.1);
-  background: #16161c;
+  border-color: rgba(212, 175, 55, 0.3);
+  background: rgba(0, 45, 45, 0.9);
 }
 
-.trust-badge-card {
-  background: #121216;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 16px;
-  padding: 24px;
+.btn-teal {
+  background: linear-gradient(to bottom, #0d9488, #0b7a70);
+  box-shadow: 0 4px 15px rgba(13, 148, 136, 0.3);
+  transition: all 0.2s ease;
 }
 
 .btn-teal:hover {
@@ -55,8 +57,8 @@ body {
 }
 
 .pmu-card-bg {
-  background: #121216;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: #05161a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .pmu-button-gradient {
@@ -86,7 +88,7 @@ body {
 
 .pmu-bonus-box {
   background: rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(217, 70, 236, 0.2);
+  border: 1px solid rgba(217, 70, 239, 0.2);
   border-radius: 16px;
   padding: 12px 24px;
 }
@@ -100,8 +102,8 @@ body {
 }
 
 .top-disclaimer {
-  background: #ff0000;
-  color: white;
+  background: var(--accent);
+  color: var(--background);
   font-size: 10px;
   font-weight: 800;
   text-transform: uppercase;
@@ -117,7 +119,8 @@ body {
   pointer-events: none;
   z-index: -1;
   background-image: 
-    linear-gradient(135deg, transparent 0%, transparent 45%, rgba(13, 148, 136, 0.05) 50%, transparent 55%, transparent 100%);
+    linear-gradient(135deg, transparent 0%, transparent 45%, rgba(13, 148, 136, 0.1) 50%, transparent 55%, transparent 100%),
+    linear-gradient(45deg, transparent 0%, transparent 45%, rgba(212, 175, 55, 0.05) 50%, transparent 55%, transparent 100%);
   background-size: 400% 400%;
   opacity: 0.5;
 }
