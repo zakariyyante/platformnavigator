@@ -6,7 +6,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-transparent pt-12 pb-20 border-t border-white/5">
-      <div className="container mx-auto px-4 max-w-5xl">
+      <div className="container mx-auto px-4 max-w-6xl">
         <div className="flex flex-col items-center">
           
           {/* Logo Section */}
@@ -24,13 +24,25 @@ export default function Footer() {
           </div>
 
           {/* Regulatory Logos Row */}
-          <div className="w-full py-8 border-t border-white/5 flex flex-wrap items-center justify-center gap-8 md:gap-12 opacity-60 grayscale hover:grayscale-0 transition-all">
-            <Image src="/18plus.svg" alt="18+" width={35} height={35} />
-            <Image src="/regulatory_body.svg" alt="ANJ" width={60} height={30} />
-            {/* Using text placeholders if other SVGs aren't available yet */}
-            <div className="text-[10px] font-black text-white uppercase tracking-widest border border-white/20 px-2 py-1 rounded">BeGambleAware</div>
-            <div className="text-[10px] font-black text-white uppercase tracking-widest border border-white/20 px-2 py-1 rounded">Gordon Moody</div>
-            <div className="text-[10px] font-black text-white uppercase tracking-widest border border-white/20 px-2 py-1 rounded">Médiateur des Jeux</div>
+          <div className="w-full py-10 border-t border-white/5 flex flex-wrap items-center justify-center gap-x-12 gap-y-8 opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
+            <div className="relative h-8 w-32">
+              <Image src="/begambleaware.svg" alt="BeGambleAware" fill className="object-contain" />
+            </div>
+            <div className="relative h-8 w-20">
+              <Image src="/regulatory_body.svg" alt="ANJ" fill className="object-contain" />
+            </div>
+            <div className="relative h-8 w-32">
+              <Image src="/gordonmoody.svg" alt="Gordon Moody" fill className="object-contain" />
+            </div>
+            <div className="relative h-10 w-10">
+              <Image src="/18plus.svg" alt="18+" fill className="object-contain" />
+            </div>
+            <div className="relative h-8 w-36">
+              <Image src="/mediateur.svg" alt="Médiateur des Jeux" fill className="object-contain" />
+            </div>
+            <div className="relative h-8 w-40">
+              <Image src="/joueurs-info.svg" alt="Joueurs Info Service" fill className="object-contain" />
+            </div>
           </div>
 
           {/* Quick Links Row */}
