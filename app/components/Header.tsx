@@ -19,13 +19,13 @@ export default function Header() {
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-4 group">
             <div className="relative w-[220px] h-[45px]">
-              <Image 
-                src="/logo.png" 
-                alt="Platform Navigator" 
-                fill 
-                className="object-contain group-hover:brightness-110 transition-all" 
-                priority
-              />
+                <Image 
+                  src="/logo.png" 
+                  alt="Platform Navigator" 
+                  fill 
+                  className="object-contain group-hover:brightness-110 transition-all" 
+                  priority
+                />
             </div>
           </Link>
 

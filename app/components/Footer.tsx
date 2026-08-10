@@ -24,24 +24,24 @@ export default function Footer() {
           </div>
 
           {/* Regulatory Logos Row */}
-          <div className="w-full py-10 border-t border-white/5 flex flex-wrap items-center justify-center gap-x-12 gap-y-8 opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
+          <div className="w-full py-10 border-t border-white/5 flex flex-wrap items-center justify-center gap-x-12 gap-y-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
             <div className="relative h-8 w-32">
-              <Image src="/begambleaware.svg" alt="BeGambleAware" fill className="object-contain" />
+              <Image src="/begambleaware.webp" alt="BeGambleAware" fill className="object-contain" />
             </div>
             <div className="relative h-8 w-20">
-              <Image src="/regulatory_body.svg" alt="ANJ" fill className="object-contain" />
+              <Image src="/anj.webp" alt="ANJ" fill className="object-contain" />
             </div>
             <div className="relative h-8 w-32">
-              <Image src="/gordonmoody.svg" alt="Gordon Moody" fill className="object-contain" />
+              <Image src="/gordonmoody.png" alt="Gordon Moody" fill className="object-contain" />
             </div>
             <div className="relative h-10 w-10">
-              <Image src="/18plus.svg" alt="18+" fill className="object-contain" />
+              <Image src="/18+.png" alt="18+" fill className="object-contain" />
             </div>
             <div className="relative h-8 w-36">
-              <Image src="/mediateur.svg" alt="Médiateur des Jeux" fill className="object-contain" />
+              <Image src="/mediateur.webp" alt="Médiateur des Jeux" fill className="object-contain" />
             </div>
             <div className="relative h-8 w-40">
-              <Image src="/joueurs-info.svg" alt="Joueurs Info Service" fill className="object-contain" />
+              <Image src="/joueurs.webp" alt="Joueurs Info Service" fill className="object-contain" />
             </div>
           </div>
 

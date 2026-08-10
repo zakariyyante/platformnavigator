@@ -7,63 +7,25 @@ export interface Brand {
   url: string;
   isMobile: boolean;
   votes: number;
+  description: string;
+  features: string[];
 }
 
 const brandsData: Omit<Brand, 'id' | 'rating'>[] = [
   {
-    name: "Léon Casino",
-    logo: "/logos/leon.svg",
-    bonus: "100% jusqu'à 500€ + 20 Tours Gratuits",
-    url: "https://leon.casino/click?payload=",
+    name: "PMU",
+    logo: "/logos/pmu.png",
+    bonus: "100% jusqu'à 85€",
+    description: "Offre mise en avant",
+    features: ["Leader français des paris hippiques", "Expérience de plus de 90 ans"],
+    url: "https://pmu.fr/register?clickid=",
     isMobile: true,
-    votes: 1245,
-  },
-  {
-    name: "Betclic",
-    logo: "/logos/betclic.svg",
-    bonus: "Votre premier pari remboursé jusqu'à 100€",
-    url: "https://betclic.fr/signup?clickid=",
-    isMobile: true,
-    votes: 3560,
-  },
-  {
-    name: "Winamax",
-    logo: "/logos/winamax.svg",
-    bonus: "Dépôt doublé jusqu'à 100€ en Freebets",
-    url: "https://winamax.fr/register?subid=",
-    isMobile: false,
-    votes: 5210,
-  },
-  {
-    name: "Bwin",
-    logo: "/logos/bwin.svg",
-    bonus: "Bonus de bienvenue jusqu'à 120€",
-    url: "https://bwin.fr/promo?visit_id=",
-    isMobile: true,
-    votes: 2100,
-  },
-  {
-    name: "Unibet",
-    logo: "/logos/unibet.svg",
-    bonus: "Jusqu'à 150€ offerts sur votre premier pari",
-    url: "https://unibet.fr/registration?clickid=",
-    isMobile: false,
-    votes: 4320,
-  },
-  {
-    name: "PokerStars",
-    logo: "/logos/pokerstars.svg",
-    bonus: "100% de bonus jusqu'à 100€ sur votre 1er dépôt",
-    url: "https://pokerstars.fr/register?payload=",
-    isMobile: true,
-    votes: 2890,
+    votes: 5469,
   }
 ];
 
-export const brands: Brand[] = brandsData
-  .sort((a, b) => b.votes - a.votes)
-  .map((brand, index) => ({
-    ...brand,
-    id: brand.name.toLowerCase().replace(/\s+/g, '-'),
-    rating: Number((10 - index * 0.2).toFixed(1)), // Descending ratings
-  }));
+export const brands: Brand[] = brandsData.map((brand) => ({
+  ...brand,
+  id: brand.name.toLowerCase().replace(/\s+/g, '-'),
+  rating: 9.9,
+}));

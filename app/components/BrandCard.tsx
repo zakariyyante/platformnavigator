@@ -28,48 +28,69 @@ export default function BrandCard({ brand, gclid, rank }: BrandCardProps) {
   return (
     <div 
       onClick={handleCardClick}
-      className={`relative card-choix rounded-xl overflow-hidden cursor-pointer flex flex-col md:flex-row items-center gap-6 p-6 md:p-8 transition-all group ${rank === 1 ? 'border-accent/40 bg-accent/5' : ''}`}
+      className="relative pmu-card-bg rounded-2xl overflow-hidden cursor-pointer flex flex-col md:flex-row items-stretch transition-all group border border-white/10"
     >
-      {/* Rank Label */}
-      {rank && (
-        <div className="absolute top-2 left-2 px-2 py-0.5 bg-accent/20 border border-accent/30 rounded text-[9px] font-black text-accent uppercase tracking-tighter">
-          N° {rank}
+      {/* Choice Badge */}
+      {rank === 1 && (
+        <div className="absolute top-0 left-0 z-20">
+          <div className="pmu-rank-badge tracking-widest">CHOIX N°1</div>
         </div>
       )}
 
-      {/* Logo Container */}
-      <div className="w-full md:w-[180px] h-[100px] bg-black/40 rounded-lg flex items-center justify-center p-4 border border-white/5">
-        <div className="relative w-full h-full">
+      {/* Left Section: Rank + Logo */}
+      <div className="flex items-center p-8 md:border-r border-white/5 min-w-[280px]">
+        <div className="text-4xl font-black gold-text mr-8 opacity-80">{rank}</div>
+        <div className="relative w-32 h-16">
           <Image 
             src={brand.logo} 
             alt={brand.name} 
             fill
-            className="object-contain brightness-110"
+            className="object-contain"
           />
         </div>
       </div>
 
-      {/* Rating */}
-      <div className="flex flex-col items-center md:items-start min-w-[100px]">
-        <div className="text-4xl md:text-5xl font-black text-white/90 tracking-tighter">
-          {brand.rating.toFixed(1)}<span className="text-xl md:text-2xl text-accent/40">/10</span>
+      {/* Middle Section: Bonus & Features */}
+      <div className="flex-grow p-8 flex flex-col justify-center gap-6">
+        <div className="pmu-bonus-box flex flex-col">
+          <div className="flex items-center gap-2 mb-2">
+            <svg className="w-4 h-4 text-magenta-500" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M5 5a3 3 0 015-2.236A3 3 0 0114.83 6H16a2 2 0 110 4h-5V9a1 1 0 10-2 0v1H4a2 2 0 110-4h1.17C5.06 5.687 5 5.35 5 5zm4 1V5a1 1 0 10-1 1h1zm3 0a1 1 0 10-1-1v1h1z" clipRule="evenodd" />
+              <path d="M9 11H3v5a2 2 0 002 2h4v-7zM11 18h4a2 2 0 002-2v-5h-6v7z" />
+            </svg>
+            <span className="text-[10px] font-black text-magenta-400 uppercase tracking-widest">{brand.description}</span>
+          </div>
+          <div className="text-2xl font-black text-white">{brand.bonus}</div>
+        </div>
+        
+        <div className="flex flex-wrap gap-3">
+          {brand.features.map((feature, i) => (
+            <div key={i} className="pmu-feature-pill font-medium">
+              {feature}
+            </div>
+          ))}
         </div>
       </div>
 
-      {/* Description */}
-      <div className="flex-grow text-center md:text-left">
-        <p className="text-sm md:text-base text-white/70 font-medium leading-relaxed max-w-xl">
-          <span className="text-accent-secondary font-bold">{brand.bonus}</span> - Plateforme certifiée par Navigator pour sa fiabilité et ses options de paiement rapides en France.
-        </p>
-        <div className="mt-4 text-[10px] text-white/20 uppercase tracking-widest font-bold">
-          Conditions applicables. 18+
+      {/* Right Section: Rating & CTA */}
+      <div className="flex flex-col items-center justify-center p-8 bg-black/20 min-w-[240px] gap-4">
+        <div className="flex flex-col items-center">
+          <div className="text-5xl font-black text-white tracking-tighter mb-1">{brand.rating.toFixed(1)}</div>
+          <div className="text-[10px] text-white/40 font-bold mb-3">({brand.votes} avis)</div>
+          <div className="flex gap-1">
+            {[...Array(5)].map((_, i) => (
+              <svg key={i} className="w-3 h-3 text-orange-400 fill-orange-400" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            ))}
+          </div>
         </div>
-      </div>
 
-      {/* CTA Button */}
-      <div className="w-full md:w-auto">
-        <button className="btn-teal w-full md:w-[220px] py-4 rounded-lg text-white font-black text-xs uppercase tracking-[0.15em] transition-all">
-          PROFITEZ DE L&apos;OFFRE
+        <button className="pmu-button-gradient w-full py-4 rounded-xl flex items-center justify-center gap-2 group transition-all hover:scale-105 active:scale-95 shadow-lg shadow-teal-500/20">
+          <span className="text-xs font-black uppercase tracking-wider">DÉCOUVRIR {brand.name}</span>
+          <svg className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
         </button>
       </div>
     </div>
