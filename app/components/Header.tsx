@@ -22,7 +22,7 @@ export default function Header() {
       {/* Top Gold Disclaimer Bar */}
       <div className="top-disclaimer w-full py-1.5 px-4 flex items-center justify-center gap-2 z-[60] relative">
         <div className="w-5 h-5 rounded-full border border-background flex items-center justify-center text-[8px] font-black">18+</div>
-        <span className="tracking-tight">Contenu réservé aux personnes majeures. Jouez avec responsabilité et gardez le contrôle.</span>
+        <span className="tracking-tight">Contenu réservé aux personnes majeures. Naviguez avec responsabilité et gardez le contrôle.</span>
       </div>
 
       <header className="sticky top-0 z-50 w-full bg-nav-dark/95 backdrop-blur-md border-b border-accent/10">

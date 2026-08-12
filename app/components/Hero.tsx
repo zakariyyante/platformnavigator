@@ -11,7 +11,7 @@ export default function Hero() {
         </div>
         
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 tracking-tight leading-tight">
-          Notre Sélection de <span className="gold-text">Plateformes</span> de Confiance
+          Notre Sélection de <span className="gold-text">Platforms</span> de Confiance
         </h1>
         
         <p className="text-base md:text-lg text-white/50 mb-10 font-bold max-w-2xl mx-auto uppercase tracking-[0.2em]">
@@ -51,8 +51,8 @@ export default function Hero() {
               </svg>
             </div>
             <div className="text-left">
-              <div className="text-[10px] font-black text-white uppercase tracking-widest leading-none mb-1">Jeu Responsable</div>
-              <div className="text-[9px] text-white/40 font-bold uppercase tracking-tight">Protection Joueurs</div>
+              <div className="text-[10px] font-black text-white uppercase tracking-widest leading-none mb-1">Platforms Responsable</div>
+              <div className="text-[9px] text-white/40 font-bold uppercase tracking-tight">Protection Utilisateurs</div>
             </div>
           </div>
         </div>

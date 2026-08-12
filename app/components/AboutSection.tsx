@@ -18,7 +18,7 @@ export default function AboutSection() {
                 Cadre Légal Et Propriété Intellectuelle
               </h3>
               <p className="text-white/60 text-sm leading-relaxed font-medium">
-                Les informations publiées sur PlatformNavigator.com servent uniquement à orienter l&apos;utilisateur vers des plateformes de paris encadrées par l&apos;ANJ. L&apos;utilisation du site implique l&apos;acceptation des présentes modalités. Tout le contenu, la charte graphique et les textes disponibles sur PlatformNavigator.com sont protégés par le droit d&apos;auteur.
+                Les informations publiées sur PlatformNavigator.com servent uniquement à orienter l&apos;utilisateur vers des platforms de reviews encadrées par l&apos;ANJ. L&apos;utilisation du site implique l&apos;acceptation des présentes modalités. Tout le contenu, la charte graphique et les textes disponibles sur PlatformNavigator.com sont protégés par le droit d&apos;auteur.
               </p>
             </div>
 
@@ -28,7 +28,7 @@ export default function AboutSection() {
                 Financement Et Indépendance Éditoriale
               </h3>
               <p className="text-white/60 text-sm leading-relaxed font-medium">
-                PlatformNavigator.com est accessible gratuitement. Son fonctionnement peut toutefois être soutenu par des partenariats d&apos;affiliation avec des opérateurs agréés. PlatformNavigator.com conserve une indépendance éditoriale dans l&apos;évaluation et la présentation des plateformes.
+                PlatformNavigator.com est accessible gratuitement. Son fonctionnement peut toutefois être soutenu par des partenariats d&apos;affiliation avec des opérateurs agréés. PlatformNavigator.com conserve une indépendance éditoriale dans l&apos;évaluation et la présentation des platforms.
               </p>
             </div>
 
@@ -38,7 +38,7 @@ export default function AboutSection() {
                 Public Majeur Et Pratique Responsable
               </h3>
               <p className="text-white/60 text-sm leading-relaxed font-medium">
-                PlatformNavigator.com s&apos;adresse exclusivement aux personnes majeures. Le jeu doit rester un divertissement. En cas de difficulté, vous pouvez consulter <Link href="https://www.begambleaware.org" className="text-white hover:text-accent transition-colors underline underline-offset-4" target="_blank">www.begambleaware.org</Link> ou <Link href="https://www.joueurs-info-service.fr" className="text-white hover:text-accent transition-colors underline underline-offset-4" target="_blank">www.joueurs-info-service.fr</Link>.
+                PlatformNavigator.com s&apos;adresse exclusivement aux personnes majeures. L&apos;utilisation des platforms doit rester un divertissement. En cas de difficulté, vous pouvez consulter <Link href="https://www.begambleaware.org" className="text-white hover:text-accent transition-colors underline underline-offset-4" target="_blank">www.begambleaware.org</Link> ou <Link href="https://www.joueurs-info-service.fr" className="text-white hover:text-accent transition-colors underline underline-offset-4" target="_blank">www.joueurs-info-service.fr</Link>.
               </p>
             </div>
           </div>

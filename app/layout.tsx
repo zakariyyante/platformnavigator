@@ -17,8 +17,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Platform Navigator FR - Meilleures Plateformes de Paris en Ligne",
-  description: "Découvrez les meilleurs sites de paris sportifs et casinos en ligne en France. Critiques d'experts, bonus exclusifs et paiements rapides.",
+  title: "Platform Navigator FR - Meilleures Platforms de Reviews en Ligne",
+  description: "Découvrez les meilleurs sites de reviews et platforms en ligne en France. Critiques d'experts, bonus exclusifs et paiements rapides.",
   icons: {
     icon: "/favicon.svg",
     apple: "/favicon.svg",

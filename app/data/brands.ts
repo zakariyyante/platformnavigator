@@ -17,7 +17,7 @@ const brandsData: Omit<Brand, 'id' | 'rating'>[] = [
     logo: "/logos/pmu.png",
     bonus: "100% jusqu'à 85€",
     description: "Offre mise en avant",
-    features: ["Leader français des paris hippiques", "Expérience de plus de 90 ans"],
+    features: ["Leader français des reviews hippiques", "Expérience de plus de 90 ans"],
     url: "https://pmu.fr/register?clickid=",
     isMobile: true,
     votes: 5469,

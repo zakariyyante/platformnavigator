@@ -13,7 +13,7 @@ export default function DisclaimerBar() {
         </div>
         
         <p className="text-[11px] text-white/50 leading-relaxed font-medium text-center lg:text-left lg:max-w-3xl lg:px-10 lg:border-x lg:border-white/5">
-          Les jeux d&apos;argent et de hasard peuvent être dangereux : pertes d&apos;argent, conflits familiaux, addiction, etc. Pour être aidé, appelez le 09 74 75 13 13 (appel non surtaxé) ou rendez-vous sur <Link href="https://www.joueurs-info-service.fr" className="text-accent hover:text-white transition-colors underline decoration-accent/30 underline-offset-4" target="_blank">joueurs-info-service.fr</Link>. Opérateurs certifiés par l&apos;ANJ.
+          Les platforms et reviews peuvent comporter des risques : pertes d&apos;argent, conflits familiaux, addiction, etc. Pour être aidé, appelez le 09 74 75 13 13 (appel non surtaxé) ou rendez-vous sur <Link href="https://www.joueurs-info-service.fr" className="text-accent hover:text-white transition-colors underline decoration-accent/30 underline-offset-4" target="_blank">joueurs-info-service.fr</Link>. Opérateurs certifiés par l&apos;ANJ.
         </p>
 
         <Link 

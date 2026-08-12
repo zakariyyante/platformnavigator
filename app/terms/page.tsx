@@ -29,7 +29,7 @@ export default function TermsPage() {
             Responsabilité
           </h2>
           <p>
-            Platform Navigator fournit des informations à titre indicatif sur les plateformes de paris sportifs. Nous ne sommes en aucun cas responsables des pertes financières subies sur les sites tiers. Le choix de parier relève de la responsabilité exclusive de l&apos;utilisateur.
+            Platform Navigator fournit des informations à titre indicatif sur les platforms de reviews. Nous ne sommes en aucun cas responsables des pertes financières subies sur les sites tiers. Le choix d&apos;utiliser les platforms relève de la responsabilité exclusive de l&apos;utilisateur.
           </p>
         </section>
 

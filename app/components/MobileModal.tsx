@@ -86,7 +86,7 @@ export default function MobileModal({ brands }: MobileModalProps) {
           <div className="flex flex-col items-center text-center gap-6">
             <div className="w-12 h-12 rounded-2xl bg-red-600 flex items-center justify-center text-sm font-black text-white shadow-xl">18+</div>
             <p className="text-[11px] text-white/40 leading-relaxed font-bold uppercase tracking-tight italic">
-              Le jeu comporte des risques : endettement, isolement, dépendance. Pour être aidé, appelez le 09 74 75 13 13.
+              L&apos;utilisation des platforms comporte des risques : endettement, isolement, dépendance. Pour être aidé, appelez le 09 74 75 13 13.
             </p>
           </div>
         </div>

@@ -38,10 +38,10 @@ export default function Footer() {
               <Image src="/18+.png" alt="18+" fill className="object-contain" />
             </div>
             <div className="relative h-8 w-36">
-              <Image src="/mediateur.webp" alt="Médiateur des Jeux" fill className="object-contain" />
+              <Image src="/mediateur.webp" alt="Médiateur des Platforms" fill className="object-contain" />
             </div>
             <div className="relative h-8 w-40">
-              <Image src="/joueurs.webp" alt="Joueurs Info Service" fill className="object-contain" />
+              <Image src="/joueurs.webp" alt="Service Info" fill className="object-contain" />
             </div>
           </div>
 
@@ -52,7 +52,7 @@ export default function Footer() {
             <Link href="/privacy" className="text-[10px] font-bold text-white/50 hover:text-white transition-colors uppercase tracking-widest">Politique de confidentialité</Link>
             <Link href="/terms" className="text-[10px] font-bold text-white/50 hover:text-white transition-colors uppercase tracking-widest">Conditions d&apos;utilisation</Link>
             <Link href="/cookies" className="text-[10px] font-bold text-white/50 hover:text-white transition-colors uppercase tracking-widest">Cookies</Link>
-            <Link href="/responsible-gambling" className="text-[10px] font-bold text-white/50 hover:text-white transition-colors uppercase tracking-widest">Jeu responsable</Link>
+            <Link href="/responsible-gambling" className="text-[10px] font-bold text-white/50 hover:text-white transition-colors uppercase tracking-widest">Platforms responsable</Link>
           </div>
 
           {/* Copyright */}
